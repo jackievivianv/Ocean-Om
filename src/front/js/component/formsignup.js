@@ -13,7 +13,6 @@ export const FormSignup = () => {
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const [lastname, setLastName] = useState("")
-    const [date_of_birth, setDate_of_birth] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
 
     const { store, actions } = useContext(Context)
@@ -21,7 +20,7 @@ export const FormSignup = () => {
     async function handleFormSignup(e) {
         e.preventDefault()
         let logged = ""
-        logged = await actions.signup(name, lastname, date_of_birth, email, password, confirmPassword);
+        logged = await actions.signup(name, lastname, email, password, confirmPassword);
         if (logged) {
             navigate("/paymentdetails")
         } else {
@@ -46,10 +45,6 @@ export const FormSignup = () => {
                                 <input type="lastname" className="form-control" id="exampleInputLastName1" onChange={(e) => setLastName(e.target.value)} />
                             </div>
                             <div className="mb-1 text-start">
-                                <label htmlFor="exampleInputDate_of_birth1" className="form-label mt-3">The date came to life</label>
-                                <input type="date" className="form-control" id="exampleInputDate_of_birth1" onChange={(e) => setDate_of_birth(e.target.value)} />
-                            </div>
-                            <div className="mb-1 text-start">
                                 <label htmlFor="exampleInputEmail1" className="form-label mt-3">Your best email</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" onChange={(e) => setEmail(e.target.value)} />
                             </div>
@@ -61,13 +56,13 @@ export const FormSignup = () => {
                             <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e) => setPassword(e.target.value)} />
                             <label htmlFor="exampleInputConfirmPassword1" className="form-label mt-3">Again, just in case</label>
                             <input type="password" className="form-control" id="exampleInputConfirmPassword1" onChange={(e) => setConfirmPassword(e.target.value)} />
-                            <button type="submit" className="btn btn-outline-secondary w-50 mt-5 ">Sign Up</button>
+                            <button type="submit" className="btn btn-outline-secondary w-50 mt-4 ">Sign Up</button>
                         </div>
                     </div>
                 </div>
                 <div className="pb-5">
 
-                    <h1 className="poiret-one-regular mt-3 pb-5">Thank you a feel warmly welcomed</h1>
+                    <h1 className="poiret-one-regular mt-4 pb-5">Thank you a feel warmly welcomed</h1>
                 </div>
 
             </form>
