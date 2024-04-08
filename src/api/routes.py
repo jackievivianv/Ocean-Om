@@ -336,7 +336,7 @@ def signup():
                 {
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
                     # ya incluido el id de la subscripcion mensual de 16 euros hecha en el dashboard de Sprite
-                    'price': 'price_1OpFEfIidK9VIejHfobZkWvI', #(PRECIO DE LA SUBSCRIPCION NORMAL)
+                    'price': 'price_1P2fmkESnYfUBbxY6YqrZtaq', #(PRECIO DE LA SUBSCRIPCION NORMAL)
                     'quantity': 1,
                 },
             ],
@@ -412,7 +412,7 @@ def signup_free_trial():
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
                     # ya incluido el id de la subscripcion mensual de 16 euros hecha en el dashboard de Sprite
                     # 'price': 'price_1OpFEfIidK9VIejHfobZkWvI', (PRECIO DE LA SUBSCRIPCION NORMAL)
-                    'price': 'price_1Or5lZIidK9VIejHV3VkM9AE', #precio de la subscripcion FREE TRIAL, no me deja poner version prueba 
+                    'price': 'price_1P2fmkESnYfUBbxY6YqrZtaq', #precio de la subscripcion FREE TRIAL, no me deja poner version prueba 
                     'quantity': 1,
                 },
             ],

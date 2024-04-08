@@ -18,17 +18,17 @@ export const Testimony = (props) => {
 
     // Extrae la parte de la fecha (sin la hora)
     const formattedDate = testimonialDate.toLocaleDateString();
-    
+
 
     return (
-        <div className="card shadow p-3 bg-body-tertiary rounded col-lg-3" style={{ width: "14rem", height: "15rem" }}>
-            <div className="card-body mt-1">
-                <h3 className="card-title text-secondary">{props.title}</h3>
-                <hr className="border" />
-
-                <span className="card-title text-secondary">{props.description}</span><br></br>
-                <hr className="border" />
-                <span className="card-title text-secondary">{formattedDate}</span>
+        <div className="card p-4 mx-5 bg-body-tertiary rounded-3 mb-3">
+            <div className="card-body d-sm-flex justify-content-sm-between align-items-sm-center pb-0 pt-0">
+                <img src="https://res.cloudinary.com/dx23woi99/image/upload/v1708370471/om_1_cmnuza.png" className="me-sm-3 mb-sm-0" style={{ width: "3rem", height: "3rem" }} alt="User Avatar" />
+                <h5 className="card-title text-secondary mb-0 poiret-one-regular">{props.title}</h5>
+                <span className="card-title text-secondary ms-sm-3 fst-italic">{formattedDate}</span>
+            </div>
+            <div className="mx-auto mt-1">
+                <span className="card-title text-secondary text-start">{props.description}</span><br />
             </div>
         </div>
     );
@@ -42,11 +42,11 @@ export const Testimony = (props) => {
 **/
 
 Testimony.propTypes = {
-history: PropTypes.object,
-id: PropTypes.number,
-title: PropTypes.string,
-description: PropTypes.string,
-date: PropTypes.string
+    history: PropTypes.object,
+    id: PropTypes.number,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    date: PropTypes.string
 };
 
 /**
