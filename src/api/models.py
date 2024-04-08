@@ -72,7 +72,7 @@ class Subscription(db.Model):
 class Testimony(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), unique=False, nullable=False)
-    description = db.Column(db.String(120), unique=True, nullable=False)
+    description = db.Column(db.String(300), unique=True, nullable=False)
     date = db.Column(db.String(120), unique=True, nullable=False)
 
 

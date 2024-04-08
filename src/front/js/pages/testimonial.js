@@ -19,7 +19,7 @@ export const Testimonials = () => {
 
 	return (
 
-		<div className="container-fluid d-block mt-2 pt-5 h-100 text-center backgroundWaves">
+		<div className="container-fluid d-block mt-2 py-5 text-center backgroundWaves min-vh-100">
 			<div className="d-block justify-content-center mt-5 pt-5">
 				<h1 className="poiret-one-regular text-secondary fw-bold mb-5">Testimonials</h1>
 				<div className="w-75 mx-auto">
@@ -47,16 +47,22 @@ export const Testimonials = () => {
 					<button className="btn btn-outline-secondary">Back to home</button>
 				</Link>
 			</div>
-			<div className="d-block mt-2 pb-5">
-				<div>
-					<p className="mb-2 poiret-one-regular">Follow us on</p>
-				</div>
-				<div>
-					<i className="fa-brands fa-xl fa-twitter m-1 " style={{ color: "#9b9d85" }}></i>
-					<i className="fa-brands fa-xl fa-instagram m-1" style={{ color: "#9b9d85" }}></i>
-					<i className="fa-brands fa-xl fa-facebook m-1" style={{ color: "#9b9d85" }}></i>
-				</div>
-			</div>
+			<div className="my-5 mb-0">
+                    <div>
+                        <p className="mb-2 text-secondary">Follow us on</p>
+                    </div>
+                    <div>
+                        <a href="https://twitter.com/oceanom" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                            <i className="fab fa-twitter fa-xl m-1" style={{ color: "#9b9d85" }}></i>
+                        </a>
+                        <a href="https://www.instagram.com/oceanom" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                            <i className="fab fa-instagram fa-xl m-1" style={{ color: "#9b9d85" }}></i>
+                        </a>
+                        <a href="https://www.facebook.com/ocean_om" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                            <i className="fab fa-facebook fa-xl m-1" style={{ color: "#9b9d85" }}></i>
+                        </a>
+                    </div>
+                </div>
 		</div>
 
 	);
