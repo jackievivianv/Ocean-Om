@@ -21,13 +21,16 @@ export const Testimonials = () => {
 
 		<div className="container-fluid d-block mt-2 pt-5 h-100 text-center backgroundWaves">
 			<div className="d-block justify-content-center mt-5 pt-5">
-				<h1 className="poiret-one-regular text-secondary">Testimonials</h1>
+				<h1 className="poiret-one-regular text-secondary fw-bold mb-5">Testimonials</h1>
+				<div className="w-75 mx-auto">
+					<hr className="border-bottom border-dark" />
+				</div>
 			</div>
 
-			<div className="container-fluid mt-2">
-				<div className="row justify-content-center align-items-center ms-5">
+			<div className="container-fluid mt-5">
+				<div className="row justify-content-center align-items-center">
 					{store.testimonials && store.testimonials.map(item => (
-						<div className="col-lg-2 col-md-4 col-sm-12 mb-4 mt-2 mx-auto gap-1 align-self-center" key={item.id}>
+						<div className="col-12 mb-4 mt-2 mx-auto gap-1 align-self-center overflow-auto align-self-center" key={item.id}>
 							<Testimony
 								id={item.id}
 								title={item.title}
@@ -58,6 +61,10 @@ export const Testimonials = () => {
 
 	);
 }
+
+
+
+
 
 
 
