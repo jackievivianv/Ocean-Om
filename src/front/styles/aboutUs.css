@@ -1,5 +1,5 @@
 .stylebackgroundsquare {
-    background-color: #675200;
+    background-color: #1D77AB;
     width: 48rem;
     background-repeat: no-repeat;
 
@@ -11,6 +11,13 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .fontaboutus {
-    color:#675200;
+  .conchabgimg {
+    background-image: url("https://www.fundacionaquae.org/wp-content/uploads/2017/06/oceano.jpg");
+    background-color: rgba(32, 103, 202, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen según sea necesario */
+    background-position: center;
+    /* Centra la imagen */
+    opacity: 75%;
   }
