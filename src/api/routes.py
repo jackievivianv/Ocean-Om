@@ -350,7 +350,6 @@ def signup():
     password = data.get('password')
     last_name = data.get('last_name')
     email = data.get('email')
-    date_of_birth = data.get('date_of_birth')
     subscription_start_date = datetime.now().date() #para que aparezca la fecha de registro en la fecha actual de rellenar el formulario
     subscription = Subscription.query.filter_by(plan='Monthly').first() #seleccionamos la opcion del plan Free Trial
     last_payment_date = ''
@@ -360,7 +359,7 @@ def signup():
     filled_form = True
 
     # Example validation
-    if not email or not password or not name or not last_name or not date_of_birth:
+    if not email or not password or not name or not last_name:
         return jsonify({'Error': 'All the fields are required'}), 400    # Example database interaction (using SQLAlchemy)
     
     next_payment_date = subscription_start_date + timedelta(days=30) #que el proximo pago sea 3 dias después de registrarse
@@ -369,8 +368,7 @@ def signup():
         name=name, 
         last_name=last_name, 
         password=password, 
-        email=email, 
-        date_of_birth=date_of_birth, 
+        email=email,
         subscription_start_date=subscription_start_date,
         subscription=subscription,
         next_payment_date=next_payment_date,
@@ -401,7 +399,7 @@ def signup():
 @api.route("/signup/freetrial", methods=["POST"])
 def signup_free_trial():
     # El request_body o cuerpo de la solicitud ya está decodificado en formato JSON y se encuentra en la variable request.json
-    request_body = request.json
+    # request_body = request.json
     
     try:
         session = stripe.checkout.Session.create(
@@ -426,7 +424,6 @@ def signup_free_trial():
     password = data.get('password')
     last_name = data.get('last_name')
     email = data.get('email')
-    date_of_birth = data.get('date_of_birth')
     subscription_start_date = datetime.now().date() #para que aparezca la fecha de registro en la fecha actual de rellenar el formulario
     subscription = Subscription.query.filter_by(plan='Free Trial').first() #seleccionamos la opcion del plan Free Trial
     last_payment_date = ''
@@ -436,7 +433,7 @@ def signup_free_trial():
     filled_form = True
 
     # Example validation
-    if not email or not password or not name or not last_name or not date_of_birth:
+    if not email or not password or not name or not last_name:
         return jsonify({'Error': 'All the fields are required'}), 400    # Example database interaction (using SQLAlchemy)
     
     next_payment_date = subscription_start_date + timedelta(days=3) #que el proximo pago sea 3 dias después de registrarse
@@ -445,8 +442,7 @@ def signup_free_trial():
         name=name, 
         last_name=last_name, 
         password=password, 
-        email=email, 
-        date_of_birth=date_of_birth, 
+        email=email,
         subscription_start_date=subscription_start_date,
         subscription=subscription,
         next_payment_date=next_payment_date,

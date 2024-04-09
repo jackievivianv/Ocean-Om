@@ -8,7 +8,6 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
     last_name = db.Column(db.String(120), unique=False, nullable=False)
-    date_of_birth = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
 
@@ -45,7 +44,6 @@ class User(db.Model):
             "name": self.name,
             "last_name": self.last_name,
             "email": self.email,
-            "date_of_birth": self.date_of_birth,
             "subscription_start_date": self.subscription_start_date,
             
             # do not serialize the password, its a security breach
