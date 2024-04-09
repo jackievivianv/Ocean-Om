@@ -31,7 +31,7 @@ export const FormSignup = () => {
     return (
         <>
             <ToastContainer />
-            <form className="stylebackgroundimg container-fluid d-flex me-0 mt-5 flex-column mb-5 w-100 opacity-50 ms-sm-1 ms-md-0 text-center pt-5" onSubmit={handleFormSignup}>
+            <form className="stylebackgroundimg container-fluid d-flex me-0 mt-5 flex-column w-100 opacity-50 ms-sm-1 ms-md-0 text-center pt-5" onSubmit={handleFormSignup}>
                 <h1 className="poiret-one-regular fs-1">New Practitioner</h1>
                 <div className="d-flex row justify-content-center">
                     <div className="col-11 col-sm-6 col-lg-4">

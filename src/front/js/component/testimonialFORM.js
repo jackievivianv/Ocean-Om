@@ -18,9 +18,14 @@ export const TestimonialForm = () => {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
+    const maxDescriptionLength = 300;
 
     async function handleTestimonials(e) {
         e.preventDefault()
+        // Verificar si la descripción tiene más de 300 caracteres
+        if (description.length > maxDescriptionLength) {
+            return;
+        }
         let fechaActual = new Date();
         const fechaActualString = fechaActual.toISOString();
         let logged = await actions.testimonials(title, description, fechaActualString);
@@ -44,7 +49,15 @@ export const TestimonialForm = () => {
                         <input type="title" className="form-control" id="exampleFormControlInput1" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
                     </div>
                     <div className="mb-3 justify-content-center">
-                        <textarea className="form-control" id="exampleFormControlTextarea1" placeholder="Testimonial" rows="3" onChange={(e) => setDescription(e.target.value)}></textarea>
+                        <textarea 
+                        className="form-control" 
+                        id="exampleFormControlTextarea1" 
+                        placeholder="Testimonial" 
+                        rows="3" 
+                        onChange={(e) => setDescription(e.target.value)}></textarea>
+                        {description.length > maxDescriptionLength && (
+                            <span className="text-danger">Description cannot exceed {maxDescriptionLength} characters</span>
+                        )}
                         <button type="submit" className="btn btn-outline-secondary w-50 mt-5" onClick={handleTestimonials}>Send</button>
                     </div>
                 </div>

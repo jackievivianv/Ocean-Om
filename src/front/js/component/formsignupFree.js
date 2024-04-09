@@ -36,7 +36,7 @@ export const FormSignupFreeTrial = ({ freeTrial }) => {
     return (
         <>
         <ToastContainer />
-        <form className="stylebackgroundimg container-fluid text-center pt-5 pb-3 mt-5 mb-0 opacity-50 h-100 w-100 min-vh-100">
+        <form className="stylebackgroundimg container-fluid text-center pt-5 pb-3 mt-4 mb-0 opacity-50 h-100 w-100 min-vh-100">
             <h1 className="poiret-one-regular fs-1 mt-4">Free Trial</h1>
             <div className="row justify-content-center">
                 <div className="col-11 col-sm-6 col-lg-4 mb-3">
