@@ -45,3 +45,11 @@
   background-color: #1D77AB;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* Ocultar la barra de desplazamiento en navegadores webkit (chrome, safari)*/
+body::-webkit-scrollbar {
+  width: 0;  /* Ancho 0 para ocultar la barra de desplazamiento vertical */
+}

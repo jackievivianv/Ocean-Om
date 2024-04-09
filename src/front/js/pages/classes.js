@@ -29,7 +29,7 @@ export const Sessions = () => {
 	};
 
 	return (
-		<div className="container-fluid p-0 overflow-auto col-lg-12 col-md-12 col-sm-12">
+		<div className="container-fluid p-0 overflow-hidden col-12">
 			<div>
 				<img id="imagenClases" src={imagenClases} className="card-img-top mx-auto" alt="Imagen Clases" style={{ width: "100%" }} />
 			</div>
