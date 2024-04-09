@@ -36,7 +36,7 @@ export const Sessions = () => {
 			<div className="card-img-overlay d-block justify-content-start align-items-center">
 				<div className="mt-5 pt-5 ms-4 text-start col-lg-12 col-md-6 col-sm-6">
 
-					<div className="mt-5 pt-5">
+					<div className="mt-5 pt-md-5 pt-4">
 						<h1 className="text-light text-start">
 							Practice and all is coming...
 						</h1>
@@ -44,11 +44,14 @@ export const Sessions = () => {
 							Find any class and practice as you were in a yoga studio.
 						</span>
 						{!isLoggedIn ? (
-							<div className="d-block align-items-center justify-content-start mt-5">
-								<Link to="/signup/freetrial">
-									<button type="button" className="btn btn-xxl btn-outline-light btn-lg">
-										Try now for free
-									</button>
+							<div className="d-block align-items-center justify-content-start ">
+								<Link to="/signup/freetrial" className="text-decoration-none">
+									<button type="button" className="mt-5 btn btn-xxl btn-outline-light d-none d-md-block d-sm-none"> {/* boton que se ve solo en pantallas medianas y grandes */}
+                                        Try now for free
+                                    </button>
+									<button type="button" className="btn btn-sm btn-light d-md-none mt-2"> {/* Agregué la clase d-md-none para ocultarlo en pantallas medianas y grandes */}
+                                        Try now for free
+                                    </button>
 								</Link>
 							</div>
 						) : (null)}
