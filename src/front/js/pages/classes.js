@@ -46,7 +46,7 @@ export const Sessions = () => {
 						{!isLoggedIn ? (
 							<div className="d-block align-items-center justify-content-start mt-5">
 								<Link to="/signup/freetrial">
-									<button type="button" className="btn btn-outline-light btn-lg">
+									<button type="button" className="btn btn-xxl btn-outline-light btn-lg">
 										Try now for free
 									</button>
 								</Link>
@@ -69,7 +69,7 @@ export const Sessions = () => {
 					<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">Jivamukti Yoga classes typically include the physical practice of asanas (postures), pranayama (breath control), chanting of mantras, meditation, and exploration of the ethical and philosophical principles of yoga. The focus is on connecting with the spiritual aspect of yoga and integrating ethical principles into daily life. Activism and environmental awareness are also important aspects of its philosophy.</p>
 				</div>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.jivamuktiYoga.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<SessionCard
@@ -97,7 +97,7 @@ export const Sessions = () => {
 					<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">Vinyasa Yoga is a dynamic style of yoga that emphasizes the connection between movement and breath. Poses flow in a continuous sequence, enhancing strength, flexibility, and breath awareness. This style aims to integrate mind and body through a fluid and meditative practice.</p>
 				</div>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.vinyasaYoga.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<SessionCard
@@ -125,7 +125,7 @@ export const Sessions = () => {
 					<p className="mx-3 fw-light lh-3 mt-1 poiret-one-regular">Rocket Yoga is a dynamic version of Ashtanga Yoga, featuring fast-paced movements and creativity. Developed by Larry Schultz, it emphasizes freedom in the practice to balance strength and flexibility.</p>
 				</div>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.rocketYoga.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<SessionCard
@@ -153,7 +153,7 @@ export const Sessions = () => {
 					<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">Ashtanga Yoga is a style of yoga that follows a predefined sequence of poses, combining fluid movement with conscious breathing. It focuses on synchronizing breath and movement, as well as the progressive practice of specific series of asanas. This systematic approach promotes strength, flexibility, and internal purification.</p>
 				</div>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.ashtangaYoga.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<SessionCard
@@ -181,7 +181,7 @@ export const Sessions = () => {
 					<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">Hatha Yoga is a traditional form of yoga that focuses on the union of physical postures (asanas) and breathing techniques (pranayama). This practice aims to balance the body and mind, promoting the connection between physical activity, breath, and meditation. Hatha Yoga is known for its emphasis on alignment, strength, and flexibility, and it is suitable for practitioners of all levels.</p>
 				</div>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.hathaYoga.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<SessionCard
@@ -207,7 +207,7 @@ export const Sessions = () => {
 				</div>
 				<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">A meditation session is a guided or individual practice aimed at achieving a state of mindfulness and mental calmness.</p>
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.meditation.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<MeditationCard
@@ -234,7 +234,7 @@ export const Sessions = () => {
 				<p className="mx-3 fw-light lh-2 mt-1 poiret-one-regular">A harmonium session is a musical and spiritual experience where the instructor plays this bellows instrument, creating harmonious melodies. Often associated with devotional practices like kirtan, the session involves singing along with the harmonium, fostering spiritual connection through music and emotional expression. Participants may explore improvisations, traditional songs, and rhythms during the session, immersing themselves in a unique and meaningful sonic experience.</p>
 
 				<div className="container-fluid d-flex flex-row">
-					<ul className="d-flex flex-nowrap flex-row overflow-scroll gap-3 px-0 mx-2">
+					<ul className="d-flex flex-nowrap flex-row overflow-auto gap-3 px-0 mx-2">
 						{store.harmonium.map(item => (
 							<li className="col-4 px-0 w-auto my-2" key={item.id}>
 								<MeditationCard

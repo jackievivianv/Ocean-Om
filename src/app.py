@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
-from flask import Flask, request, jsonify, url_for, send_from_directory
+from flask import Flask, request, jsonify, url_for, send_from_directory, current_app
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
 from flask_swagger import swagger
@@ -16,6 +16,7 @@ from api.admin import setup_admin
 from api.commands import setup_commands
 from flask_jwt_extended import JWTManager
 import stripe
+from datetime import datetime, timedelta
 
 # from models import Person
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
@@ -32,6 +33,14 @@ mail = Mail(app)
 app.url_map.strict_slashes = False
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 jwt = JWTManager(app)
+
+# Configuración del tiempo de vida del token
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(minutes=30)
+
+with app.app_context():
+    # Acceso al tiempo de vida del token de sesión
+    token_expires = current_app.config['JWT_ACCESS_TOKEN_EXPIRES']
+    print("Tiempo de vida del token de sesión:", token_expires)
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL") #Aqui se esta usando la variable de entorno

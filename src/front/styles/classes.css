@@ -2,3 +2,8 @@
     height: 14rem;
     /* opacity: 0.8;  */
   }
+
+  .btn-xxl {
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+    padding: 10px 30px; /* Ajusta el relleno del botón */
+}

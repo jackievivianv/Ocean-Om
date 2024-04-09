@@ -97,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false
 				}
 			},
-			signup: async (name, lastname, date_of_birth, email, password, confirmPassword) => {
+			signup: async (name, lastname, email, password, confirmPassword) => {
 				// console.log("funciona")
 				try {
 					let response = await fetch(process.env.BACKEND_URL + "/api/signup", {
@@ -110,7 +110,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 							"password": password,
 							"name": name,
 							"last_name": lastname,
-							"date_of_birth": date_of_birth,
 						})
 					})
 					let data = await response.json()
@@ -119,8 +118,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					}
 					// Almacenamos el clientsecret y la session id que nos da stripe en el local storage para pasarsela al formulario
-					localStorage.setItem("payment", JSON.stringify({clientSecret: data.clientSecret, session_id : data.session_id}))
-					
+					localStorage.setItem("payment", JSON.stringify({ clientSecret: data.clientSecret, session_id: data.session_id }))
+
 					return true
 				} catch (error) {
 					// console.log(error);
@@ -128,7 +127,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			signupFree: async (name, lastname, date_of_birth, email, password, confirmPassword) => {
+			signupFree: async (name, lastname, email, password, confirmPassword) => {
 				// console.log("funciona")
 				try {
 					let response = await fetch(process.env.BACKEND_URL + "/api/signup/freetrial", {
@@ -141,7 +140,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 							"password": password,
 							"name": name,
 							"last_name": lastname,
-							"date_of_birth": date_of_birth,
 						})
 					})
 					let data = await response.json()
@@ -150,8 +148,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					}
 					// Almacenamos el clientsecret y la session id que nos da stripe en el local storage para pasarsela al formulario
-					localStorage.setItem("payment", JSON.stringify({clientSecret: data.clientSecret, session_id : data.session_id}))
-					
+					localStorage.setItem("payment", JSON.stringify({ clientSecret: data.clientSecret, session_id: data.session_id }))
+
 					return true
 				} catch (error) {
 					// console.log(error);
@@ -313,32 +311,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logout: () => {
 				// console.log("Logging out...");
-                localStorage.removeItem("token"); // Elimina el token del almacenamiento local
-                localStorage.removeItem("user"); // Elimina los datos de usuario del almacenamiento local
-                setStore({ loggedUser: null }); // Actualiza el estado indicando que no hay un usuario autenticado
+				localStorage.removeItem("token"); // Elimina el token del almacenamiento local
+				localStorage.removeItem("user"); // Elimina los datos de usuario del almacenamiento local
+				setStore({ loggedUser: null }); // Actualiza el estado indicando que no hay un usuario autenticado
 				console.log(store.loggedUser)
-            },
+			},
 			resetPassword: async (email) => {
-                try {
-                    const response = await fetch(process.env.BACKEND_URL + "/reset-password", {
-                       method: 'PUT',
-                       headers: {
-                          'Content-Type': 'application/json',
-                       },
-                       body: JSON.stringify({ email }),
-                    });
-                    if (response.ok) {
-                       return { success: true, message: 'Password reset successful. Check your email for the new password.' };
-                    } else {
-                       const data = await response.json();
-                       console.error('Error response from server:', data);
-                       return { success: false, message: 'Error: User not found' };
-                    }
-                 } catch (error) {
-                    // console.error('Error:', error);
-                    return { success: false, message: `An unexpected error occurred.` };
-                 }
-            },
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "/reset-password", {
+						method: 'PUT',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ email }),
+					});
+					if (response.ok) {
+						return { success: true, message: 'Password reset successful. Check your email for the new password.' };
+					} else {
+						const data = await response.json();
+						console.error('Error response from server:', data);
+						return { success: false, message: 'Error: User not found' };
+					}
+				} catch (error) {
+					// console.error('Error:', error);
+					return { success: false, message: `An unexpected error occurred.` };
+				}
+			},
 
 			testimonials: async (title, description, date) => {
 				// console.log(email, password);
@@ -372,8 +370,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getAllTestimonials: async () => {
 				try {
 					const response = await fetch(process.env.BACKEND_URL + "/api/testimony");
-					
-				
+
+
 					if (response.status === 200) {
 						const data = await response.json();
 						setStore({ testimonials: data.testimony });
