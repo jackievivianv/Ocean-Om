@@ -23,20 +23,35 @@
 .stylebackgroundColorBeige {
   background-color: #f3e9e9;
   /* background-image: url("https://img.freepik.com/vector-gratis/copia-espacio-fondo-blanco-ondulado_23-2148845471.jpg?size=626&ext=jpg&ga=GA1.1.1488620777.1708041600&semt=ais"); */
-      /* background-color: rgba(255, 254, 254, 0.8); */
-    background-repeat: no-repeat;
-    background-size: cover; /* Ajusta el tamaño de la imagen según sea necesario */
-    background-position: center; /* Centra la imagen */
+  /* background-color: rgba(255, 254, 254, 0.8); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Ajusta el tamaño de la imagen según sea necesario */
+  background-position: center;
+  /* Centra la imagen */
 }
 
 .backgroundWaves {
   background-image: url("https://static.vecteezy.com/system/resources/previews/005/554/734/non_2x/white-background-abstract-with-modern-design-gray-free-vector.jpg");
   background-color: rgba(255, 254, 254, 0.8);
   background-repeat: no-repeat;
-  background-size: cover; /* Ajusta el tamaño de la imagen según sea necesario */
-  background-position: center; /* Centra la imagen */
+  background-size: cover;
+  /* Ajusta el tamaño de la imagen según sea necesario */
+  background-position: center;
+  /* Centra la imagen */
 }
 
 .colorNavyFoot {
   background-color: #1D77AB;
+}
+
+.conchabgimg {
+  background-image: url("https://www.fundacionaquae.org/wp-content/uploads/2017/06/oceano.jpg");
+  background-color: rgba(32, 103, 202, 0.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Ajusta el tamaño de la imagen según sea necesario */
+  background-position: center;
+  /* Centra la imagen */
+  opacity: 75%;
 }
