@@ -109,3 +109,4 @@ SessionYogaDetailsCard.propTypes = {
 
 
 };
+
