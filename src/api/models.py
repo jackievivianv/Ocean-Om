@@ -10,7 +10,6 @@ class User(db.Model):
     last_name = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-
     id_subscription = db.Column(db.Integer, db.ForeignKey('subscription.id'))
     subscription = db.relationship('Subscription', backref='user', lazy=True)
     subscription_start_date = db.Column(db.String(120), unique=False, nullable=True)
